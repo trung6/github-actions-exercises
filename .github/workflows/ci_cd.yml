@@ -9,7 +9,7 @@ jobs:
       - name: check out code
         uses: actions/checkout@v4
       - name: set up python
-        uses: actions/setup-python@v1.1.1
+        uses: actions/setup-python@v5
       - name: run code
         run: python hello_world.py
   
