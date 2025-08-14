@@ -1,5 +1,7 @@
 name: ci_cd_pipeline
 on: [push]
+env:
+  APPLICATION_NAME: hello_world
 jobs:
   test:
     runs-on: ubuntu-latest
