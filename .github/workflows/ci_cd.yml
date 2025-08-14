@@ -1,0 +1,26 @@
+name: ci_cd_pipeline
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+      - name: set up python
+        uses: actions/setup-python@v1.1.1
+      - name: run code
+        run: python hello_world.py
+  
+  build:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@v4
+      - name: create an antifact
+        run: python hello_world >> artifact.log
+      - name: upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: log
+          path: artifact.log
