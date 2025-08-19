@@ -9,4 +9,8 @@ RUN apk add --no-cache \
         which jq
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Give it execute permission
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 ENTRYPOINT ["entrypoint.sh"]
