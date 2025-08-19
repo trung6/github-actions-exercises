@@ -1,0 +1,12 @@
+name: test_custom_action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: test custom action
+        uses: trung6/github-actions-exercises@custom_action_ch05
